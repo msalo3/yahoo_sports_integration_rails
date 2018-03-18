@@ -1,3 +1,5 @@
+<!-- Current Tutorial Part: 4.4.5 A user class -->
+
 # Ruby on Rails Tutorial sample application
 
 This is the sample application for
