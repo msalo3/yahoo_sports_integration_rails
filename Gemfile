@@ -11,6 +11,8 @@ gem 'turbolinks',     '5.0.1'
 gem 'jbuilder',       '2.7.0'
 gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
+gem 'figaro'
+gem 'oauth2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

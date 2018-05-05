@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Access token:</strong>
+  <%= @connection.access_token %>
+</p>
+
+<p>
+  <strong>Refresh token:</strong>
+  <%= @connection.refresh_token %>
+</p>
+
+<%= link_to 'Edit', edit_connection_path(@connection) %> |
+<%= link_to 'Back', connections_path %>

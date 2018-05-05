@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :connections
+
+  namespace :credentials do
+    scope :oauth do
+      get 'authorize/:connection_id', to: 'o_auth#authorize', as: :oauth_authorize
+      get 'callback', to: 'o_auth#callback', as: :oauth_callback
+      # get 'disconnect/:connection_id', to: 'o_auth#disconnect', as: :oauth_disconnect
+    end
+  end
+
   get 'users/new'
 
   root 'static_pages#home'
