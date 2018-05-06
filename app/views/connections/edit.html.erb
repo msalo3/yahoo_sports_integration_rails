@@ -3,7 +3,7 @@
 <% if params[:format] %>
   <p>
     <strong>Params</strong>
-    <%= params[:format].to_hash %>
+    <%= params[:format] %>
   </p>
 <% end %>
 <%= render 'form', connection: @connection %>
