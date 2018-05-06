@@ -1,9 +1,11 @@
 <h1>Editing Connection</h1>
 
-<p>
-  <strong>Params</strong>
-  <%= params[:format].to_hash %>
-</p>
+<% if params[:format] %>
+  <p>
+    <strong>Params</strong>
+    <%= params[:format].to_hash %>
+  </p>
+<% end %>
 <%= render 'form', connection: @connection %>
 <%= link_to "Connect to Yahoo!", credentials_oauth_authorize_path(@connection), class: 'btn btn-primary' %>
 
