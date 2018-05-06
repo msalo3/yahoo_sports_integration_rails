@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :connections
 
-  get 'connections/edit_test'
-
   namespace :credentials do
     scope :oauth do
       get 'authorize/:connection_id', to: 'o_auth#authorize', as: :oauth_authorize
