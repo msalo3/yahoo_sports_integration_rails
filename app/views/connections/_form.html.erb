@@ -11,15 +11,30 @@
     </div>
   <% end %>
 
+<% if params[:access_token] %>
   <div class="field">
     <%= form.label :access_token %>
-    <%= form.text_field :access_token, id: :connection_access_token %>
+    <%= form.text_field :access_token, id: :connection_access_token, :value => params[:access_token] %>
   </div>
-
+<% else %>
   <div class="field">
     <%= form.label :refresh_token %>
     <%= form.text_field :refresh_token, id: :connection_refresh_token %>
   </div>
+<% end %>
+
+
+<% if params[:refresh_token] %>
+  <div class="field">
+    <%= form.label :refresh_token %>
+    <%= form.text_field :refresh_token, id: :connection_refresh_token, :value => params[:refresh_token] %>
+  </div>
+<% else %>
+  <div class="field">
+    <%= form.label :refresh_token %>
+    <%= form.text_field :refresh_token, id: :connection_refresh_token %>
+  </div>
+<% end %>
 
   <div class="actions">
     <%= form.submit %>
