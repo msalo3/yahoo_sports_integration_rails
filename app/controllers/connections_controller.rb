@@ -20,6 +20,8 @@ class ConnectionsController < ApplicationController
   # GET /connections/1/edit
   def edit
   end
+  def edit_test
+  end
 
   # POST /connections
   # POST /connections.json
@@ -69,6 +71,6 @@ class ConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def connection_params
-      params.require(:connection).permit(:access_token, :refresh_token)
+      params.require(:connection).permit(:access_token, :refresh_token, :token)
     end
 end
