@@ -16,7 +16,8 @@ class Credentials::OAuthController < ActionController::Base
     flash[:notice] = 'Credentials updated.'
     flash[:notice] = @connection.refresh_token
     flash[:notice] = @connection.access_token
-    redirect_to edit_connection_path(@connection)
+    # redirect_to edit_connection_path(@connection)
+    redirect_to edit_test_connection_path(@connection, token)
   end
 
   private
