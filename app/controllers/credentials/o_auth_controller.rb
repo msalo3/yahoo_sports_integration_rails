@@ -11,11 +11,11 @@ class Credentials::OAuthController < ActionController::Base
   def callback
     code = params[:code]
     token = @client.auth_code.get_token(code).to_hash
-    @connection.update(refresh_token: token['refresh_token'], access_token: token['access_token'])
+    @connection.update(refresh_token: token.refresh_token, access_token: token.access_token)
 
-    flash[:notice] = 'Credentials updated.'
-    flash[:notice] = @connection.refresh_token
-    flash[:notice] = @connection.access_token
+    flash[:success] = 'Credentials updated.'
+    flash[:success] = @connection.refresh_token
+    flash[:success] = @connection.access_token
     # redirect_to edit_connection_path(@connection)
     redirect_to edit_connection_path(@connection, token)
   end
