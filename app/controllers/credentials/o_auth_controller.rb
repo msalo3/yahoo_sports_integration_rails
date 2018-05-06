@@ -10,7 +10,7 @@ class Credentials::OAuthController < ActionController::Base
 
   def callback
     code = params[:code]
-    token = @client.auth_code.get_token(code)
+    token = @client.auth_code.get_token(code).to_hash
     @connection.update(refresh_token: token['refresh_token'], access_token: token['access_token'])
 
     flash[:notice] = 'Credentials updated.'
