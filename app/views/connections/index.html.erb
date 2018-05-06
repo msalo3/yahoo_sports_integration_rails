@@ -14,6 +14,11 @@
   <tbody>
     <% @connections.each do |connection| %>
       <tr>
+        <% if connection.updated_at > Time.now - 60.minutes %>
+          <td> Current Connection is live! </td>
+        <% else %>
+          <td> Current Connection is not live. Please edit and reconnect! </td>
+        <% end %>
         <td><%= connection.access_token %></td>
         <td><%= connection.refresh_token %></td>
         <td><%= link_to 'Show', connection %></td>
@@ -25,5 +30,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Connection', new_connection_path %>
