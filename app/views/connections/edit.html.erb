@@ -1,13 +1,6 @@
 <h1>Editing Connection</h1>
 
-<% if params %>
-  <p>
-    <strong>Params</strong>
-    <%= params %>
-  </p>
-<% end %>
 <%= render 'form', connection: @connection %>
-<%= link_to "Connect to Yahoo!", credentials_oauth_authorize_path(@connection), class: 'btn btn-primary' %>
 
 <%= link_to 'Show', @connection %> |
 <%= link_to 'Back', connections_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :properties
+  resources :data
   resources :connections
 
   namespace :credentials do
@@ -9,9 +11,17 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :data_request do
+    scope :data_request do
+      get 'league_info', to: 'data_request#league_info', as: :request_league_info
+    end
+  end
+
   get 'users/new'
 
   root 'static_pages#home'
+
+  get '/test',    to: 'static_pages#test'
 
   get '/help',    to: 'static_pages#help'
   get '/about',   to: 'static_pages#about'

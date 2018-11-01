@@ -11,6 +11,14 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def current_connection
+    @current_connection ||= Connection.last
+  end
+
+  def connection_valid?
+    current_connection.updated_at > Time.now - 60.minutes
+  end
+
   def log_out
     session.delete(:user_id)
     @current_user = nil

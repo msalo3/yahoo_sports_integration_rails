@@ -13,6 +13,7 @@ gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
 gem 'figaro'
 gem 'oauth2'
+gem 'rest-client'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
