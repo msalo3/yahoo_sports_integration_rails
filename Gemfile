@@ -16,7 +16,10 @@ gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
 gem 'figaro'
 gem 'omniauth-yahoo-oauth2'
-gem 'pg'
+
+group :production do
+  gem 'pg', '0.20.0'
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
