@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def custom
-    puts auth_hash
+    puts env["omniauth.auth"]
   end
 
   def delete
@@ -25,6 +25,6 @@ class SessionsController < ApplicationController
   private
 
   def auth_hash
-    env["omniauth.auth"] || request.env["omniauth.auth"]
+    request.env["omniauth.auth"]
   end
 end
