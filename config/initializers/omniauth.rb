@@ -1,4 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :yahoo_oauth2, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'],
-    name: 'yahoo'
+  provider :yahoo_auth, ENV['YAHOO_APP_ID'], ENV['YAHOO_APP_SECRET']
 end

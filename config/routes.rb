@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'auth/:provider/callback', to: 'sessions#custom'
+
   get 'users/new'
 
   root 'static_pages#home'

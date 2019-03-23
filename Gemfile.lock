@@ -138,9 +138,9 @@ GEM
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
-    omniauth-yahoo-oauth2 (1.1.0)
-      omniauth (~> 1.1)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-yahoo_auth (0.1.1)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.5)
     pg (0.20.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -242,7 +242,7 @@ DEPENDENCIES
   jquery-rails (= 4.3.1)
   listen (= 3.1.5)
   minitest-reporters (= 1.1.14)
-  omniauth-yahoo-oauth2
+  omniauth-yahoo_auth
   pg (= 0.20.0)
   puma (= 3.9.1)
   rails (= 5.1.4)

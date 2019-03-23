@@ -13,8 +13,18 @@ class SessionsController < ApplicationController
     end
   end
 
+  def custom
+    puts auth_hash
+  end
+
   def delete
     log_out
     redirect_to root_url
+  end
+
+  private
+
+  def auth_hash
+    env["omniauth.auth"] || request.env["omniauth.auth"]
   end
 end

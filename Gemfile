@@ -15,7 +15,7 @@ gem 'jbuilder',       '2.7.0'
 gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
 gem 'figaro'
-gem 'omniauth-yahoo-oauth2'
+gem 'omniauth-yahoo_auth'
 
 group :production do
   gem 'pg', '0.20.0'
