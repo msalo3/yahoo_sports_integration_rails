@@ -14,7 +14,23 @@ class SessionsController < ApplicationController
   end
 
   def custom
-    @yahoo_stuff = params
+    @connection = Connection.new(access_token: request.env["omniauth.auth"]['credentials']['token'], refresh_token: request.env["omniauth.auth"]['credentials']['refresh_token'])
+
+    respond_to do |format|
+      if @connection.save
+        format.html { redirect_to @connection, notice: 'Connection was successfully saved.' }
+        format.json { render :show, status: :created, location: @connection }
+      else
+        format.html { render :new }
+        format.json { render json: @connection.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 
   def delete
