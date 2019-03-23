@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def custom
-    puts env["omniauth.auth"]
+    @yahoo_stuff = params
   end
 
   def delete
