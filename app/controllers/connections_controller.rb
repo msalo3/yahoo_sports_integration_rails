@@ -1,3 +1,4 @@
+require 'rest-client'
 class ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +11,8 @@ class ConnectionsController < ApplicationController
   # GET /connections/1
   # GET /connections/1.json
   def show
+    @connection
+    # @data = RestClient.get 'https://fantasysports.yahooapis.com/fantasy/v2/league/nhl.l.36671', {:Authorization => 'Bearer ' + @connection.access_token.to_s}
   end
 
   # GET /connections/new

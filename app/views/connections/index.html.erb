@@ -27,5 +27,8 @@
     <% end %>
   </tbody>
 </table>
+<% if !@connections.any? %>
+  <td><%= link_to 'New', new_connection_path %></td>
+<% end %>
 
 <br>
