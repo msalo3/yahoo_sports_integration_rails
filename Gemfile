@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.2'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
@@ -15,6 +16,7 @@ gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
 gem 'figaro'
 gem 'omniauth-yahoo-oauth2'
+gem 'pg'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
