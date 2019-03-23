@@ -1,4 +1,3 @@
-require 'rest-client'
 class ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
 
