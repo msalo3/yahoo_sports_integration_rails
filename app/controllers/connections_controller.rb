@@ -4,7 +4,6 @@ class ConnectionsController < ApplicationController
   # GET /connections
   # GET /connections.json
   def index
-    @connections = Connection.all
   end
 
   # GET /connections/1
@@ -16,7 +15,6 @@ class ConnectionsController < ApplicationController
 
   # GET /connections/new
   def new
-    @connection = Connection.new
   end
 
   # GET /connections/1/edit
@@ -26,17 +24,6 @@ class ConnectionsController < ApplicationController
   # POST /connections
   # POST /connections.json
   def create
-    @connection = Connection.new(connection_params)
-
-    respond_to do |format|
-      if @connection.save
-        format.html { redirect_to @connection, notice: 'Connection was successfully saved.' }
-        format.json { render :show, status: :created, location: @connection }
-      else
-        format.html { render :new }
-        format.json { render json: @connection.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /connections/1
@@ -56,11 +43,6 @@ class ConnectionsController < ApplicationController
   # DELETE /connections/1
   # DELETE /connections/1.json
   def destroy
-    @connection.destroy
-    respond_to do |format|
-      format.html { redirect_to connections_url, notice: 'Connection was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

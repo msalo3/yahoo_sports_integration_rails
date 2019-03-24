@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def custom
-    @connection = Connection.new(access_token: request.env["omniauth.auth"]['credentials']['token'], refresh_token: request.env["omniauth.auth"]['credentials']['refresh_token'])
+    @connection = Connection.new(access_token: auth_hash['credentials']['token'], refresh_token: auth_hash['credentials']['refresh_token'], user_id: current_user.id)
 
     respond_to do |format|
       if @connection.save
