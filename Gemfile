@@ -16,6 +16,8 @@ gem 'rake',           '12.3.1'
 gem 'bcrypt',         '3.1.11'
 gem 'figaro'
 gem 'omniauth-yahoo_auth'
+# gem 'net/http'
+gem 'rest-client'
 
 group :production do
   gem 'pg', '0.20.0'
