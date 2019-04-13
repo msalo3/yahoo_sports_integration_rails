@@ -1,6 +1,6 @@
 class ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
-  require 'yahoo_client'
+  require 'yahoo_api'
 
   # GET /connections
   # GET /connections.json
@@ -10,7 +10,7 @@ class ConnectionsController < ApplicationController
   # GET /connections/1
   # GET /connections/1.json
   def show
-    @yahoo_client = YahooAPI.new(@connection)
+    yahoo_client = YahooAPI.new(@connection)
     @connection
     @data = yahoo_client.get_league
   end
