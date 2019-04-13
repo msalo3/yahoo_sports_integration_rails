@@ -15,8 +15,12 @@ class YahooAPI
 
   def get_league(id = "36671", sport = "nhl")
     url = 'league/' + sport + '.l.' + id + '?format=json'
-    data = RestClient.get BASE_URL + url, {:Authorization => 'Bearer ' + @access_token.to_s}
-    
+    begin
+      data = RestClient.get BASE_URL + url, {:Authorization => 'Bearer ' + @access_token.to_s}
+    rescue => e
+      logger.debug "--------------------------ERROR--------------------------"
+      logger.debug e
+    end
     logger.debug data
     
     response = JSON.parse(data)
