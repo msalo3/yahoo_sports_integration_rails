@@ -1,5 +1,6 @@
 class ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
+  require 'yahoo_client'
 
   # GET /connections
   # GET /connections.json
@@ -9,8 +10,9 @@ class ConnectionsController < ApplicationController
   # GET /connections/1
   # GET /connections/1.json
   def show
+    @yahoo_client = YahooAPI.new(@connection)
     @connection
-    # @data = RestClient.get 'https://fantasysports.yahooapis.com/fantasy/v2/league/nhl.l.36671', {:Authorization => 'Bearer ' + @connection.access_token.to_s}
+    @data = yahoo_client.get_league
   end
 
   # GET /connections/new
